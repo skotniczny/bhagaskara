@@ -6,15 +6,15 @@
 }
 
 $white: #fff;
-$gallery: #eee;
+$gallery: #eee; // alternatywne tło sekcji
 $gray: #898989; // obramowaie formularzy
 $dove-gray: #676767; // głowny kolor tekstu
 $bouquet: #b269af; // obramowanie tytułu sekcji
-$rouge: #9f449b; // kolor wyróżnienia
+$rouge: #9f449b; // kolor wyróżnienia i hover odnośników
 $plum: #9E449B; // kolor przycisku
 $finn: #6B2E68; // kolor dolnego obramowania przycisku
 $tundora: #484848;
-$boulder: #777;
+$boulder: #777; // kolor ikon społ., wskaźnika slajdów i podpisu w slajderze
 $mine-shaft: #222;
 
 body {
@@ -30,6 +30,9 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+  &:focus {
+    outline: 1px dotted $rouge; 
+  }
 }
 
 /* Header */
@@ -62,24 +65,25 @@ a {
     display: inline-block;
     width: 180px;
     height: 180px;
-    background-image: url("../images/bha.png");
-    background-repeat: no-repeat;
-    &:hover, &.active {
-      background-image: url("../images/hoverbg.png");
-    }
-
     a {
+      background-image: url("../images/bha.png");
+      // background-image: url("../images/bg01.png");
+      background-repeat: no-repeat;
       position: relative;
       height: 100%;
       width: 100%;
-      padding-top: 107px;
+      padding-top: 115px;
       // color: inherit;
       font-weight: 700;
       display: inline-block;
       text-decoration: none;
+      &:hover, &:focus, &.active {
+        outline: 0;
+        background-image: url("../images/hoverbg.png");
+      }
       &:before {
         position: absolute;
-        top: 40px;
+        top: 34px;
         left: 58px;
         content: "";
         display: inline-block;
@@ -90,22 +94,22 @@ a {
         background-size: 64px auto;
       }
       &.nav-services:before {
-        background-position: 0 -128px;
+        background-position: 0 -125px;
       }
       &.nav-portfolio:before {
-        background-position: 0 -191px;
+        background-position: 0 -188px;
       }
       &.nav-about:before {
-        background-position: 0 -0;
+        background-position: 0 -0px;
       }
       &.nav-team:before {
-        background-position: 0 -67px;
+        background-position: 0 -62px;
       }
       &.nav-blog:before {
-        background-position: 0 -253px;
+        background-position: 0 -250px;
       }
       &.nav-contact:before {
-        background-position: 0 -316px;
+        background-position: 0 -313px;
       }
     }
   }
@@ -113,18 +117,17 @@ a {
   .arrow-down {
     display: inline-block;
     width: 120px;
-    height: 120px;
-    background-image: url("../images/arrow.png");
-    background-repeat: no-repeat;
-    
-    &:hover {
-      background-image: url("../images/arrow1.png");  
-    }
-
+    height: 120px; 
     a {
       display: block;
       height: 100%;
       width: 100%;
+      background-image: url("../images/arrow.png");
+      background-repeat: no-repeat;
+      &:hover, &:focus {
+        outline: 0;
+        background-image: url("../images/arrow1.png");  
+      }
     }
   }  
 }
@@ -161,7 +164,7 @@ a {
       font-weight: 500;
       font-size: 16px;
       text-decoration: none;
-      &.active, &:hover {
+      &:hover, &:focus, &.active {
         color: $rouge;        
       }
     }
@@ -225,50 +228,30 @@ section .container {
 .info {
   text-align: center;
   background-color: $gallery;
-  h2 {
+  .icon-heading {
     font-weight: 500;
-  }
-  span {
-    display: inline-block;
-    height: 200px;
-    width: 200px;
-    // &.heart {
-    //   background-image: url("../images/1.png");
-    //   background-position: 0 0;
-    // }
-    // &.diamond {
-    //   background-image: url("../images/2.png");
-    //   &:hover { background-image: url("../images/2hr.png")}
-    // }
-    // &.coffee {
-    //   background-image: url("../images/3.png");
-    //   &:hover { background-image: url("../images/3hr.png")}
-    // }
-    // &.phone {
-    //   background-image: url("../images/4.png");
-    //   &:hover { background-image: url("../images/4hr.png")}
-    // }
-
-    &.heart {
+    &:before {
+      content: "";
+      display: block;
+      margin: 0 auto 1em;
+      height: 200px;
+      width: 200px;
       background-image: url("../images/icons-sprite.png");
-      background-position: 0 0;
-      &:hover { background-image: url("../images/icons-sprite-hover.png")}
+      background-repeat: no-repeat;
     }
-    &.diamond {
-      background-image: url("../images/icons-sprite.png");
-      background-position: 0 -200px;
-      &:hover { background-image: url("../images/icons-sprite-hover.png")}
+    &.heart:before { 
+      background-position: 0 0; 
     }
-    &.coffee {
-      background-image: url("../images/icons-sprite.png");
-      background-position: 0 -400px;
-      &:hover { background-image: url("../images/icons-sprite-hover.png")}
+    &.diamond:before {
+      background-position: 0 -200px; 
     }
-    &.phone {
-      background-image: url("../images/icons-sprite.png");
-      background-position: 0 -600px;
-      &:hover { background-image: url("../images/icons-sprite-hover.png")}
+    &.coffee:before {
+      background-position: 0 -400px; 
     }
+    &.phone:before {
+      background-position: 0 -600px; 
+    }
+    &:hover:before { background-image: url("../images/icons-sprite-hover.png") }
   }
 }
 
@@ -305,13 +288,6 @@ section .container {
   h3 {
     color: $tundora;
     text-transform: uppercase;
-  }
-  .social-icon {
-    margin: 0 16px;
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-    line-height: 42px;
   }
 }
 
@@ -375,6 +351,7 @@ section .container {
     display: inline-block;
     padding: 0;
     li {
+      margin: 0 2px;
       display: inline-block;
       height: 12px;
       width: 12px;
@@ -395,19 +372,6 @@ section .container {
     background-color: $white;
     position: relative;
     top: -3em;
-  }
-  .filter-button {
-    text-transform: uppercase;
-    display: inline-block;
-    border: 1px solid $mine-shaft;
-    border-radius: 3px;
-    padding: 0.5 1em;
-    margin: 0.5em;
-    &:hover, &.active {
-      border: 1px solid $rouge;
-      color: $white;
-      background-color: $rouge;
-    }
   }
   img {
     width: 100%;
@@ -431,6 +395,11 @@ section .container {
     font-size: 1.5em;
     width: 100%;
     border: 1px solid $gray;
+    &:focus {
+      outline: 0;
+      border: 1px solid $rouge;
+      box-shadow: 0 0 2px $finn;
+    }
   }
   .contact-info {
     padding-left: 2em;
@@ -454,7 +423,7 @@ section .container {
   padding-bottom: 5em;
 }
 
-/* Helpers */
+/* Przyciski */
 
 .button, input[type="submit"] {
   display: inline-block;
@@ -464,26 +433,62 @@ section .container {
   color: $white;
   font-size: 1.2em;
   border-radius: 7px;
+  border: none;
   border-bottom: 3px solid $finn;
   font-weight: 500;
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $finn;
+  }
 }
 
-.highlight {
-  color: $rouge;
+button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid $mine-shaft;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  &:hover, &:focus, &.active {
+    outline: 0;
+    border: 1px solid $rouge;
+    color: $white;
+    background-color: $rouge;
+  }
 }
 
 .social-icon {
-  margin-right: 36px;
   text-align: center;
-  width: 80px;
-  height: 80px;
   border: 1px solid $boulder;
   color: $mine-shaft;
   display: inline-block;
-  font-size: 52px;
-  line-height: 70px;
   font-weight: 300;
   border-radius: 50%;
+  margin: 0 16px;
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  line-height: 42px;
+  &:hover, &:focus {
+    outline: 0;
+    color: $rouge;
+    border: 1px solid $rouge;
+  }
+}
+  
+.big-social-icon {
+  @extend .social-icon;
+  margin-right: 36px;
+  width: 80px;
+  height: 80px;
+  font-size: 52px;
+  line-height: 70px;
+}
+
+/* Helpers */
+
+.highlight {
+  color: $rouge;
 }
 
 .visuallyhidden {
