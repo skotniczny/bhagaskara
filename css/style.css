@@ -1315,7 +1315,7 @@ a:focus {
 
 /* Header */
 .site-title {
-  margin: 2em 0 1em;
+  margin: 3.5em 0 1em;
   display: inline-block;
   width: 482px;
   height: 110px;
@@ -1324,12 +1324,13 @@ a:focus {
 .site-subtitle {
   font-weight: 300;
   font-size: 3em;
+  margin: .5em 0;
 }
 
 .site-description {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.5em;
-  margin-bottom: 3.5em;
+  margin-bottom: 4.5em;
 }
 
 .page-header {
@@ -1355,8 +1356,11 @@ a:focus {
   text-decoration: none;
 }
 .page-header .nav a:hover, .page-header .nav a:focus, .page-header .nav a.active {
-  outline: 0;
   background-image: url("../images/hoverbg.png");
+}
+.page-header .nav a:focus {
+  outline: thin dotted;
+  outline-offset: -35px;
 }
 .page-header .nav a:before {
   position: absolute;
@@ -1413,6 +1417,7 @@ a:focus {
 .page-nav {
   background-color: #fff;
   padding: .5em 0;
+  margin-top: 4em;
 }
 
 .logo {
@@ -1432,11 +1437,11 @@ a:focus {
 }
 .main-menu li a {
   display: block;
-  padding: 0.5em;
-  margin-left: 25px;
+  padding: 0.5em 0;
+  margin-left: 34px;
   color: #676767;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 18px;
   text-decoration: none;
 }
 .main-menu li a:hover, .main-menu li a:focus, .main-menu li a.active {
@@ -1445,16 +1450,16 @@ a:focus {
 
 /* Sekcje */
 section .container {
-  padding: 6em 0;
+  padding: 8em 0;
 }
 
 .section-title {
   position: relative;
-  margin: 0 auto 2em;
-  font-size: 2.5em;
+  margin: 0 auto 2.5em;
+  font-size: 3em;
   text-align: center;
   line-height: 114px;
-  font-weight: 500;
+  font-weight: 300;
   width: 297px;
   height: 114px;
 }
@@ -1481,16 +1486,18 @@ section .container {
   right: 0;
 }
 
-.about-bottom, .services-bottom {
-  padding: 6em 0;
+.about .about-bottom, .services .services-bottom {
+  padding: 9em 0;
   text-align: center;
   background-image: url("../images/section-bg.jpg");
   background-size: cover;
 }
-.about-bottom p, .services-bottom p {
+.about .about-bottom p, .services .services-bottom p {
   color: #fff;
   font-size: 3em;
-  font-weight: bold;
+  font-weight: 400;
+  padding: 0;
+  margin: 1em 0 0;
 }
 
 /* Kontent */
@@ -1498,13 +1505,18 @@ section .container {
   text-align: center;
   background-color: #eee;
 }
+.info .container {
+  padding: 10em 0;
+}
 .info .icon-heading {
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-top: 0;
 }
 .info .icon-heading:before {
   content: "";
   display: block;
-  margin: 0 auto 1em;
+  margin: 0 auto 1.5em;
   height: 200px;
   width: 200px;
   background-image: url("../images/icons-sprite.png");
@@ -1525,6 +1537,9 @@ section .container {
 .info .icon-heading:hover:before {
   background-image: url("../images/icons-sprite-hover.png");
 }
+.info p {
+  line-height: 1.7;
+}
 
 /* Sekcja o nas */
 .about img {
@@ -1539,25 +1554,44 @@ section .container {
 .team {
   text-align: center;
 }
-.team .arrow {
+.team .container {
+  padding-bottom: 0;
+}
+.team .slider-nav {
+  margin: 5em 0 9em;
+}
+.team .slider-nav .arrow {
   display: inline-block;
   height: 70px;
   background-repeat: no-repeat;
 }
-.team .arrow.left {
+.team .slider-nav .arrow.left {
   width: 64px;
   background-image: url("../images/left.png");
 }
-.team .arrow.right {
+.team .slider-nav .arrow.right {
   width: 65px;
   background-image: url("../images/right.png");
 }
 .team h3 {
+  font-size: 1.5em;
   color: #484848;
   text-transform: uppercase;
+  margin: 2em 0 0;
+}
+.team p {
+  font-size: 1.15em;
+  color: #777;
+  font-weight: 400;
 }
 
 /* Sekcja skille */
+.services .container {
+  padding: 7em 0 11em;
+}
+.services .container .section-title {
+  margin-bottom: 4em;
+}
 .services .progress-bar-title {
   color: #222;
   text-transform: uppercase;
@@ -1565,11 +1599,12 @@ section .container {
   font-size: 1.5em;
 }
 .services .progress-bar-title span {
-  font-weight: 500;
+  font-weight: 400;
   color: #777;
   float: right;
 }
 .services .progress-bar {
+  margin-bottom: 1.5em;
   width: 100%;
   height: 20px;
   background-color: #f1f1f1;
@@ -1597,7 +1632,7 @@ section .container {
   display: block;
   font-size: 4em;
   color: #222;
-  font-weight: 500;
+  font-weight: 400;
 }
 .blog blockquote p {
   color: #484848;
@@ -1632,12 +1667,27 @@ section .container {
   background-color: #fff;
   position: relative;
   top: -3em;
+  padding-bottom: 4em;
+}
+.portfolio .filter-buttons {
+  margin: 4.5em 0;
 }
 .portfolio img {
   width: 100%;
 }
-.portfolio h2 {
+.portfolio h3 {
   color: #222;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+.portfolio p {
+  color: #777;
+  font-weight: 400;
+  margin: 0.5em 0 2.5em;
+}
+.portfolio .button {
+  margin-top: 1em;
 }
 
 /* Sekcja formularza kontaktowego */
@@ -1677,7 +1727,7 @@ section .container {
 /* Stopka strony */
 .page-footer {
   text-align: center;
-  padding-bottom: 5em;
+  padding-bottom: 7em;
 }
 
 /* Przyciski */
@@ -1691,26 +1741,35 @@ section .container {
   border-radius: 7px;
   border: none;
   border-bottom: 3px solid #6B2E68;
-  font-weight: 500;
+  font-weight: 400;
 }
 .button:hover, .button:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-  outline: 0;
   background-color: #6B2E68;
+}
+.button:focus, input[type="submit"]:focus {
+  outline: thin dotted;
+  outline-offset: -8px;
 }
 
 button {
+  font-size: 1.12em;
+  font-weight: 400;
+  color: #222;
   text-transform: uppercase;
   background-color: transparent;
   border: 1px solid #222;
   border-radius: 3px;
-  padding: 0.5em 1em;
-  margin: 0.5em;
+  padding: 0.5em 1.3em;
+  margin: 0 0.5em;
 }
 button:hover, button:focus, button.active {
-  outline: 0;
   border: 1px solid #9f449b;
   color: #fff;
   background-color: #9f449b;
+}
+button:focus {
+  outline: thin dotted;
+  outline-offset: -0.3em;
 }
 
 .social-icon, .big-social-icon {
@@ -1727,7 +1786,6 @@ button:hover, button:focus, button.active {
   line-height: 42px;
 }
 .social-icon:hover, .big-social-icon:hover, .social-icon:focus, .big-social-icon:focus {
-  outline: 0;
   color: #9f449b;
   border: 1px solid #9f449b;
 }

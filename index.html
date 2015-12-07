@@ -5,6 +5,7 @@
   <title>Bhagasakara</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
 </head>
 <body>
   <header id="home" class="page-header" role="banner">
@@ -121,8 +122,10 @@
     <section id="team" class="team">
       <div class="container">
         <h2 class="section-title">Our <span class="highlight">team</span></h2>
-        <a class="arrow left" href="#"></a>
-        <a class="arrow right" href="#"></a>
+        <div class="slider-nav">
+          <a class="arrow left" href="#"></a>
+          <a class="arrow right" href="#"></a>
+        </div>
         <div class="row">
           <div class="col-md-4">
             <img src="images/ellipse.png" alt="">
@@ -153,13 +156,13 @@
           <div class="col-md-5 col-md-offset-1">
             <p class="progress-bar-title">web design <span>90%</span></p>
             <div class="progress-bar">
-              <span style="width: 90%">90%</span>
+              <span style="width: 90%">&nbsp;</span>
             </div>
           </div>
           <div class="col-md-5">
             <p class="progress-bar-title">graphic design <span>70%</span></p>
             <div class="progress-bar">
-              <span style="width: 70%">70%</span>
+              <span style="width: 70%">&nbsp;</span>
             </div>
           </div>
         </div>
@@ -167,13 +170,13 @@
           <div class="col-md-5 col-md-offset-1">
             <p class="progress-bar-title">html / css <span>75%</span></p>
             <div class="progress-bar">
-              <span style="width: 75%">75%</span>
+              <span style="width: 75%">&nbsp;</span>
             </div>
           </div>
           <div class="col-md-5">
             <p class="progress-bar-title">ui / ux <span>80%</span></p>
             <div class="progress-bar">
-              <span style="width: 80%">80%</span>
+              <span style="width: 80%">&nbsp;</span>
             </div>
           </div>
         </div>
@@ -212,11 +215,12 @@
 
     <section id="portfolio" class="portfolio">
       <div class="container">
-        <h2 class="section-title">Our <span class="highlight">portfolio</span></h2>  
-        <button class="active">all</button>
-        <button>web</button>
-        <button>apps</button>
-        <button>icons</button>
+        <h2 class="section-title">Our <span class="highlight">portfolio</span></h2> <div class="filter-buttons"> 
+          <button class="active">all</button>
+          <button>web</button>
+          <button>apps</button>
+          <button>icons</button>
+        </div>
         <div class="row">
           <div class="col-md-4">
             <img src="images/Img1.jpg" alt="">

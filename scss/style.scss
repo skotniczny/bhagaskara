@@ -38,7 +38,7 @@ a {
 /* Header */
 
 .site-title {
-  margin: 2em 0 1em;
+  margin: 3.5em 0 1em;
   display: inline-block;
   width: 482px;
   height: 110px;
@@ -47,12 +47,13 @@ a {
 .site-subtitle {
   font-weight: 300;
   font-size: 3em;
+  margin: .5em 0;
 }
 
 .site-description {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.5em;
-  margin-bottom: 3.5em;
+  margin-bottom: 4.5em;
 }
 
 .page-header {
@@ -60,7 +61,6 @@ a {
   background-size: cover;
   color: $white;
   text-align: center;
-
   .nav {
     display: inline-block;
     width: 180px;
@@ -78,8 +78,11 @@ a {
       display: inline-block;
       text-decoration: none;
       &:hover, &:focus, &.active {
-        outline: 0;
         background-image: url("../images/hoverbg.png");
+      }
+      &:focus {
+        outline: thin dotted;
+        outline-offset: -35px;
       }
       &:before {
         position: absolute;
@@ -141,6 +144,7 @@ a {
 .page-nav {
   background-color: $white;
   padding: .5em 0;
+  margin-top: 4em;
 }
 
 .logo {
@@ -158,11 +162,11 @@ a {
   display: inline-block;
     a {
       display: block;
-      padding: 0.5em;
-      margin-left: 25px;
+      padding: 0.5em 0;
+      margin-left: 34px;
       color: $dove-gray;
-      font-weight: 500;
-      font-size: 16px;
+      font-weight: 400;
+      font-size: 18px;
       text-decoration: none;
       &:hover, &:focus, &.active {
         color: $rouge;        
@@ -174,16 +178,16 @@ a {
 /* Sekcje */
 
 section .container {
-  padding: 6em 0;
+  padding: 8em 0;
 }
 
 .section-title {
   position: relative;
-  margin: 0 auto 2em;
-  font-size: 2.5em;
+  margin: 0 auto 2.5em;
+  font-size: 3em;
   text-align: center;
   line-height: 114px;
-  font-weight: 500;
+  font-weight: 300;
   width: 297px;
   height: 114px;
   &:before {
@@ -210,16 +214,17 @@ section .container {
   }
 }
 
-.about-bottom, .services-bottom {
-  padding: 6em 0;
+.about .about-bottom, .services .services-bottom {
+  padding: 9em 0;
   text-align: center;
   background-image: url("../images/section-bg.jpg");
   background-size: cover;
   p {
     color: $white;
     font-size: 3em;
-    font-weight: bold;
-
+    font-weight: 400;
+    padding: 0;
+    margin: 1em 0 0;
   }
 }
 
@@ -228,12 +233,17 @@ section .container {
 .info {
   text-align: center;
   background-color: $gallery;
+  .container {
+    padding: 10em 0;
+  }
   .icon-heading {
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin-top: 0;
     &:before {
       content: "";
       display: block;
-      margin: 0 auto 1em;
+      margin: 0 auto 1.5em;
       height: 200px;
       width: 200px;
       background-image: url("../images/icons-sprite.png");
@@ -252,6 +262,9 @@ section .container {
       background-position: 0 -600px; 
     }
     &:hover:before { background-image: url("../images/icons-sprite-hover.png") }
+  }
+  p {
+    line-height: 1.7;
   }
 }
 
@@ -272,40 +285,61 @@ section .container {
 
 .team {
   text-align: center;
-  .arrow {
-    display: inline-block;
-    height: 70px;
-    background-repeat: no-repeat;
-    &.left {
-      width: 64px;
-      background-image: url("../images/left.png");
-    }
-    &.right {
-      width: 65px;
-      background-image: url("../images/right.png");
+  .container {
+    padding-bottom: 0;
+  }
+  .slider-nav {
+    margin: 5em 0 9em;
+    .arrow {
+      display: inline-block;
+      height: 70px;
+      background-repeat: no-repeat;
+      &.left {
+        width: 64px;
+        background-image: url("../images/left.png");
+      }
+      &.right {
+        width: 65px;
+        background-image: url("../images/right.png");
+      }    
     }    
   }
+
   h3 {
+    font-size: 1.5em;
     color: $tundora;
     text-transform: uppercase;
+    margin: 2em 0 0;
+  }
+  p {
+    font-size: 1.15em;
+    color: $boulder;
+    font-weight: 400;
   }
 }
 
 /* Sekcja skille */
 
 .services {
+  .container {
+    padding: 7em 0 11em;
+    .section-title {
+      margin-bottom: 4em; 
+    }
+  }
   .progress-bar-title {
     color: $mine-shaft;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.5em;
     span {
-      font-weight: 500;
+      font-weight: 400;
       color: $boulder;
       float: right;
     }
   }
   .progress-bar {
+    margin-bottom: 1.5em;
     width: 100%;
     height: 20px;
     background-color: lighten($gallery, 1%);
@@ -332,7 +366,7 @@ section .container {
         display: block;
         font-size: 4em;
         color: $mine-shaft;
-        font-weight: 500;
+        font-weight: 400;
       }
     }
   }
@@ -372,12 +406,27 @@ section .container {
     background-color: $white;
     position: relative;
     top: -3em;
+    padding-bottom: 4em;
+  }
+  .filter-buttons {
+    margin: 4.5em 0;
   }
   img {
     width: 100%;
   }
-  h2 {
+  h3 {
     color: $mine-shaft;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  p {
+    color: $boulder;
+    font-weight: 400;
+    margin: 0.5em 0 2.5em;
+  }
+  .button {
+    margin-top: 1em;
   }
 }
 
@@ -420,7 +469,7 @@ section .container {
 
 .page-footer {
   text-align: center;
-  padding-bottom: 5em;
+  padding-bottom: 7em;
 }
 
 /* Przyciski */
@@ -435,25 +484,34 @@ section .container {
   border-radius: 7px;
   border: none;
   border-bottom: 3px solid $finn;
-  font-weight: 500;
+  font-weight: 400;
   &:hover, &:focus {
-    outline: 0;
     background-color: $finn;
+  }
+  &:focus {
+    outline: thin dotted;
+    outline-offset: -8px;
   }
 }
 
 button {
+  font-size: 1.12em;
+  font-weight: 400;
+  color: $mine-shaft;
   text-transform: uppercase;
   background-color: transparent;
   border: 1px solid $mine-shaft;
   border-radius: 3px;
-  padding: 0.5em 1em;
-  margin: 0.5em;
+  padding: 0.5em 1.3em;
+  margin: 0 0.5em;
   &:hover, &:focus, &.active {
-    outline: 0;
     border: 1px solid $rouge;
     color: $white;
     background-color: $rouge;
+  }
+  &:focus {
+    outline: thin dotted;
+    outline-offset: -0.3em;
   }
 }
 
@@ -470,7 +528,6 @@ button {
   font-size: 28px;
   line-height: 42px;
   &:hover, &:focus {
-    outline: 0;
     color: $rouge;
     border: 1px solid $rouge;
   }
