@@ -148,22 +148,47 @@ a {
 }
 
 .logo {
-  float: left; 
   a {
+    float: left;
     display: block;
     margin: 1em 0;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+  @media (min-width: 992px) {
+    float: left;
+    display: block;
+  }
+}
+
+#hamburger {
+  float: right;
+  display: block;
+  background-color: #fff;
+  background-image: url("../images/hamburger.png");
+  background-size: 50px auto;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 36px;
+  margin: 1em 0;
+  border: none;
+  @media (min-width: 768px) {
+    display: none;
+  }
+  &:focus {
+    outline: 1px dotted $finn;
+    outline-offset: 3px;
   }
 } 
 
 .main-menu {
   padding: 0;
-  float: right;
   li {
-  display: inline-block;
+    display: block;
     a {
       display: block;
       padding: 0.5em 0;
-      margin-left: 34px;
       color: $dove-gray;
       font-weight: 400;
       font-size: 18px;
@@ -171,6 +196,19 @@ a {
       &:hover, &:focus, &.active {
         color: $rouge;        
       }
+      @media (min-width: 768px) {
+        margin: 0 15px;
+      }
+      @media (min-width: 992px) {
+        margin: 0 0 0 34px;
+      }   
+    }
+  }
+  @media (min-width: 768px) {
+  display: block!important;
+  float: right;
+    li {
+      display: inline-block;
     }
   }
 }
@@ -410,6 +448,26 @@ section .container {
   }
   .filter-buttons {
     margin: 4.5em 0;
+    button {
+      font-size: 1.12em;
+      font-weight: 400;
+      color: $mine-shaft;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: 1px solid $mine-shaft;
+      border-radius: 3px;
+      padding: 0.5em 1.3em;
+      margin: 0 0.5em;
+      &:hover, &:focus, &.active {
+        border: 1px solid $rouge;
+        color: $white;
+        background-color: $rouge;
+      }
+      &:focus {
+        outline: thin dotted;
+        outline-offset: -0.3em;
+      }
+    }
   }
   img {
     width: 100%;
@@ -494,27 +552,6 @@ section .container {
   }
 }
 
-button {
-  font-size: 1.12em;
-  font-weight: 400;
-  color: $mine-shaft;
-  text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid $mine-shaft;
-  border-radius: 3px;
-  padding: 0.5em 1.3em;
-  margin: 0 0.5em;
-  &:hover, &:focus, &.active {
-    border: 1px solid $rouge;
-    color: $white;
-    background-color: $rouge;
-  }
-  &:focus {
-    outline: thin dotted;
-    outline-offset: -0.3em;
-  }
-}
-
 .social-icon {
   text-align: center;
   border: 1px solid $boulder;
@@ -546,6 +583,10 @@ button {
 
 .highlight {
   color: $rouge;
+}
+
+.hidden {
+  display: none;
 }
 
 .visuallyhidden {

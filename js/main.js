@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-	var btn = document.querySelector("#fire");
+	var menu = document.querySelector(".main-menu");
+	menu.classList.add('hidden');
+
+	var btn = document.querySelector("#hamburger");
 	btn.addEventListener("click", function(e) {
 		e.preventDefault();
-		this.nextElementSibling.classList.toggle('active');
+		console.log(this.parent);
+		this.parentElement.nextElementSibling.classList.toggle('hidden');
 	});
 });
