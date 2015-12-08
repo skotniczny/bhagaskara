@@ -1299,6 +1299,13 @@ body {
   color: #676767;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  text-align: center;
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 p {
@@ -1317,8 +1324,11 @@ a:focus {
 .site-title {
   margin: 3.5em 0 1em;
   display: inline-block;
-  width: 482px;
-  height: 110px;
+  max-width: 482px;
+  max-height: 110px;
+}
+.site-title img {
+  width: 100%;
 }
 
 .site-subtitle {
@@ -1337,7 +1347,6 @@ a:focus {
   background-image: url("../images/hero-bg.jpg");
   background-size: cover;
   color: #fff;
-  text-align: center;
 }
 .page-header .nav {
   display: inline-block;
@@ -1466,6 +1475,7 @@ a:focus {
   display: block;
 }
 .main-menu li a {
+  text-transform: uppercase;
   display: block;
   padding: 0.5em 0;
   color: #676767;
@@ -1502,14 +1512,12 @@ section .container {
 }
 
 .section-title {
+  display: inline-block;
   position: relative;
   margin: 0 auto 2.5em;
   font-size: 3em;
-  text-align: center;
-  line-height: 114px;
   font-weight: 300;
-  width: 297px;
-  height: 114px;
+  padding: .5em 1em;
 }
 .section-title:before {
   content: "";
@@ -1536,7 +1544,6 @@ section .container {
 
 .about .about-bottom, .services .services-bottom {
   padding: 9em 0;
-  text-align: center;
   background-image: url("../images/section-bg.jpg");
   background-size: cover;
 }
@@ -1550,7 +1557,6 @@ section .container {
 
 /* Kontent */
 .info {
-  text-align: center;
   background-color: #eee;
 }
 .info .container {
@@ -1593,15 +1599,13 @@ section .container {
 .about img {
   max-width: 100%;
 }
-.about p {
-  padding-right: 1em;
+.about .lead p {
+  text-align: left;
+  padding: 0 1em;
   line-height: 2;
 }
 
 /* Sekcja zespol */
-.team {
-  text-align: center;
-}
 .team .container {
   padding-bottom: 0;
 }
@@ -1666,14 +1670,12 @@ section .container {
 /* Sekcja blog */
 .blog {
   background-color: #eee;
-  text-align: center;
 }
 .blog ul {
   padding: 0;
 }
 .blog ul li {
-  display: inline-block;
-  width: 25%;
+  display: block;
   font-weight: 300;
 }
 .blog ul li span {
@@ -1681,6 +1683,12 @@ section .container {
   font-size: 4em;
   color: #222;
   font-weight: 400;
+}
+@media (min-width: 768px) {
+  .blog ul li {
+    display: inline-block;
+    width: 25%;
+  }
 }
 .blog blockquote p {
   color: #484848;
@@ -1708,9 +1716,6 @@ section .container {
 }
 
 /* Sekcja portfolio */
-.portfolio {
-  text-align: center;
-}
 .portfolio .container {
   background-color: #fff;
   position: relative;
@@ -1729,7 +1734,7 @@ section .container {
   border: 1px solid #222;
   border-radius: 3px;
   padding: 0.5em 1.3em;
-  margin: 0 0.5em;
+  margin: 0.5em;
 }
 .portfolio .filter-buttons button:hover, .portfolio .filter-buttons button:focus, .portfolio .filter-buttons button.active {
   border: 1px solid #9f449b;
@@ -1739,6 +1744,31 @@ section .container {
 .portfolio .filter-buttons button:focus {
   outline: thin dotted;
   outline-offset: -0.3em;
+}
+.portfolio .row a {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.portfolio .row a img {
+  display: block;
+}
+.portfolio .row a:hover, .portfolio .row a:focus {
+  outline: 0;
+  background-image: url("../images/plus.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.portfolio .row a:hover:after, .portfolio .row a:focus:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1) url("../images/plus.png") no-repeat center center;
 }
 .portfolio img {
   width: 100%;
@@ -1760,13 +1790,19 @@ section .container {
 
 /* Sekcja formularza kontaktowego */
 .contact form {
-  padding-left: 1.5em;
+  margin: 1em 0;
+  padding: 0 1em;
+}
+@media (min-width: 768px) {
+  .contact form {
+    text-align: left;
+  }
 }
 .contact input[type=text],
 .contact input[type=email],
 .contact textarea {
   padding: 1em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   font-size: 1.5em;
   width: 100%;
   border: 1px solid #898989;
@@ -1779,7 +1815,9 @@ section .container {
   box-shadow: 0 0 2px #6B2E68;
 }
 .contact .contact-info {
-  padding-left: 2em;
+  margin: 1em 0;
+  padding: 0 1em;
+  text-align: left;
 }
 .contact p {
   margin: 0 0 2em;
@@ -1794,7 +1832,6 @@ section .container {
 
 /* Stopka strony */
 .page-footer {
-  text-align: center;
   padding-bottom: 7em;
 }
 
@@ -1803,6 +1840,7 @@ section .container {
   display: inline-block;
   text-decoration: none;
   padding: 1em 3em;
+  margin-bottom: 1em;
   background-color: #9E449B;
   color: #fff;
   font-size: 1.2em;
@@ -1838,11 +1876,17 @@ section .container {
 }
 
 .big-social-icon {
-  margin-right: 36px;
+  margin: 6px;
   width: 80px;
   height: 80px;
   font-size: 52px;
   line-height: 70px;
+}
+@media (min-width: 768px) {
+  .big-social-icon {
+    margin: 0;
+    margin-right: 36px;
+  }
 }
 
 /* Helpers */

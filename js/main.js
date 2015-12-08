@@ -18,10 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
   var iconsBtn = $("#icons");
 
   function filterPortfolio(event) {
+    if($("button.active")[0]) {
+      $("button.active")[0].classList.remove("active");
+    }
+    this.classList.add("active");
     var portfolioElms = $(".portfolio .row div");
     var filter = event.target.id;
     for (var i = 0; i < portfolioElms.length; i++) {
-      portfolioElms[i].classList.remove('hidden');
+      portfolioElms[i].classList.remove("hidden");
       var elmData = portfolioElms[i].getAttribute("data-cat");
       // console.log(filter, elmData);
       if (filter !== elmData && filter !== "all") {

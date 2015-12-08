@@ -21,6 +21,11 @@ body {
   color: $dove-gray;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  text-align: center;
+  font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 p {
@@ -40,8 +45,11 @@ a {
 .site-title {
   margin: 3.5em 0 1em;
   display: inline-block;
-  width: 482px;
-  height: 110px;
+  max-width: 482px;
+  max-height: 110px;
+  img {
+    width: 100%;
+  }
 }
 
 .site-subtitle {
@@ -60,7 +68,6 @@ a {
   background-image: url("../images/hero-bg.jpg");
   background-size: cover;
   color: $white;
-  text-align: center;
   .nav {
     display: inline-block;
     width: 180px;
@@ -187,6 +194,7 @@ a {
   li {
     display: block;
     a {
+      text-transform: uppercase;
       display: block;
       padding: 0.5em 0;
       color: $dove-gray;
@@ -220,14 +228,12 @@ section .container {
 }
 
 .section-title {
+  display: inline-block;
   position: relative;
   margin: 0 auto 2.5em;
   font-size: 3em;
-  text-align: center;
-  line-height: 114px;
   font-weight: 300;
-  width: 297px;
-  height: 114px;
+  padding: .5em 1em;
   &:before {
     content: "";
     display: block;
@@ -254,7 +260,6 @@ section .container {
 
 .about .about-bottom, .services .services-bottom {
   padding: 9em 0;
-  text-align: center;
   background-image: url("../images/section-bg.jpg");
   background-size: cover;
   p {
@@ -269,7 +274,6 @@ section .container {
 /* Kontent */
 
 .info {
-  text-align: center;
   background-color: $gallery;
   .container {
     padding: 10em 0;
@@ -313,8 +317,9 @@ section .container {
     max-width: 100%;
   }
   
-  p {
-    padding-right: 1em;
+  .lead p {
+    text-align: left;
+    padding: 0 1em;
     line-height: 2;
   }
 }
@@ -322,7 +327,6 @@ section .container {
 /* Sekcja zespol */
 
 .team {
-  text-align: center;
   .container {
     padding-bottom: 0;
   }
@@ -393,12 +397,10 @@ section .container {
 
 .blog {
   background-color: $gallery;
-  text-align: center;
   ul {
     padding: 0;
     li {
-      display: inline-block;
-      width: 25%;
+      display: block;
       font-weight: 300;
       span {
         display: block;
@@ -406,6 +408,10 @@ section .container {
         color: $mine-shaft;
         font-weight: 400;
       }
+      @media (min-width: 768px) {
+        display: inline-block;
+        width: 25%;
+      } 
     }
   }
   blockquote {
@@ -439,7 +445,6 @@ section .container {
 /* Sekcja portfolio */
 
 .portfolio {
-  text-align: center;
   .container {
     background-color: $white;
     position: relative;
@@ -457,7 +462,7 @@ section .container {
       border: 1px solid $mine-shaft;
       border-radius: 3px;
       padding: 0.5em 1.3em;
-      margin: 0 0.5em;
+      margin: 0.5em;
       &:hover, &:focus, &.active {
         border: 1px solid $rouge;
         color: $white;
@@ -466,6 +471,31 @@ section .container {
       &:focus {
         outline: thin dotted;
         outline-offset: -0.3em;
+      }
+    }
+  }
+  .row a {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    img {
+      display: block;
+    }
+    &:hover, &:focus {
+      outline: 0;
+      background-image: url("../images/plus.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,.1) url("../images/plus.png") no-repeat center center;
       }
     }
   }
@@ -492,13 +522,17 @@ section .container {
 
 .contact {
   form {
-    padding-left: 1.5em;
+    margin: 1em 0;
+    padding: 0 1em;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
   }
   input[type=text], 
   input[type=email],
   textarea {
     padding: 1em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     font-size: 1.5em;
     width: 100%;
     border: 1px solid $gray;
@@ -509,7 +543,9 @@ section .container {
     }
   }
   .contact-info {
-    padding-left: 2em;
+    margin: 1em 0;
+    padding: 0 1em;
+    text-align: left;
   }
   p {
     margin: 0 0 2em;
@@ -526,7 +562,6 @@ section .container {
 /* Stopka strony */
 
 .page-footer {
-  text-align: center;
   padding-bottom: 7em;
 }
 
@@ -536,6 +571,7 @@ section .container {
   display: inline-block;
   text-decoration: none;
   padding: 1em 3em;
+  margin-bottom: 1em;
   background-color: $plum;
   color: $white;
   font-size: 1.2em;
@@ -572,11 +608,15 @@ section .container {
   
 .big-social-icon {
   @extend .social-icon;
-  margin-right: 36px;
+  margin: 6px;
   width: 80px;
   height: 80px;
   font-size: 52px;
   line-height: 70px;
+  @media (min-width: 768px) {
+    margin: 0;
+    margin-right: 36px;
+  }
 }
 
 /* Helpers */
