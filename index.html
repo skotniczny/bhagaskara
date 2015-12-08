@@ -58,24 +58,24 @@
         <!-- </div> -->
       </div>
     </div> <!-- .container -->
-    <nav id="nav" class="page-nav" role="navigation">
-      <div class="container">
-        <div class="logo clearfix">
-          <a href="#main"><img src="images/logo2.png" alt=""></a>
-          <button id="hamburger"></button>
-        </div>
-        <ul class="main-menu">
-          <li><a href="#home">HOME</a></li>
-          <li><a class="active" href="#about">ABOUT</a></li>
-          <li><a href="#team">TEAM</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#portfolio">PORTFOLIO</a></li>
-          <li><a href="#blog">BLOG</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </div> <!-- .container -->   
-    </nav>
   </header>
+  <nav id="nav" class="page-nav" role="navigation">
+    <div class="container">
+      <div class="logo clearfix">
+        <a href="#main"><img src="images/logo2.png" alt=""></a>
+        <button id="hamburger"></button>
+      </div>
+      <ul class="main-menu">
+        <li><a href="#home">HOME</a></li>
+        <li><a class="active" href="#about">ABOUT</a></li>
+        <li><a href="#team">TEAM</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#blog">BLOG</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div> <!-- .container -->   
+  </nav>
   <main id="main" role="main">
     <section class="info">
       <h2 class="section-title visuallyhidden">Our <span class="highlight">mission</span></h2>
@@ -166,8 +166,6 @@
               <span style="width: 70%">&nbsp;</span>
             </div>
           </div>
-        </div>
-        <div class="row">
           <div class="col-md-5 col-md-offset-1">
             <p class="progress-bar-title">html / css <span>75%</span></p>
             <div class="progress-bar">
@@ -217,43 +215,53 @@
     <section id="portfolio" class="portfolio">
       <div class="container">
         <h2 class="section-title">Our <span class="highlight">portfolio</span></h2> <div class="filter-buttons"> 
-          <button class="active">all</button>
-          <button>web</button>
-          <button>apps</button>
-          <button>icons</button>
+          <button id="all" class="active">all</button>
+          <button id="web">web</button>
+          <button id="apps">apps</button>
+          <button id="icons">icons</button>
         </div>
         <div class="row">
-          <div class="col-md-4">
-            <img src="images/Img1.jpg" alt="">
-            <h3>Neque Porro Quisquam</h3>
-            <p>apps, icon, ui</p>
+          <div class="col-sm-6 col-md-4" data-cat="apps">
+            <a href="#">
+              <img src="images/Img1.jpg" alt="">
+              <h3>Neque Porro Quisquam</h3>
+              <p>apps, icon, ui</p>
+            </a>
           </div>
-          <div class="col-md-4">
-            <img src="images/Img2.jpg" alt="">
-            <h3>Neque Porro Quisquam</h3>
-            <p>apps, icon, ui</p>
+          <div class="col-sm-6 col-md-4" data-cat="apps">
+            <a href="#">
+              <img src="images/Img2.jpg" alt="">
+              <h3>Neque Porro Quisquam</h3>
+              <p>apps, icon, ui</p>
+            </a>
           </div>
-          <div class="col-md-4">
-            <img src="images/Img3.jpg" alt="">
-            <h3>Neque Porro Quisquam</h3>
-            <p>apps, icon, ui</p>
+          <div class="col-sm-6 col-md-4" data-cat="web">
+            <a href="#">
+              <img src="images/Img3.jpg" alt="">
+              <h3>Neque Porro Quisquam</h3>
+              <p>apps, icon, ui</p>
+            </a>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <img src="images/Img4.jpg" alt="">
-            <h3>Neque Porro Quisquam</h3>
-            <p>apps, icon, ui</p>
+          <div class="col-sm-6 col-md-4" data-cat="apps">
+            <a href="#">
+              <img src="images/Img4.jpg" alt="">
+              <h3>Neque Porro Quisquam</h3>
+              <p>apps, icon, ui</p>
+            </a>
           </div>
-          <div class="col-md-4">
-            <img src="images/Img5.jpg" alt="">
-            <h3>Neque Porro Quisquam</h3>
-            <p>apps, icon, ui</p>
+          <div class="col-sm-6 col-md-4" data-cat="icons">
+              <a href="#">
+              <img src="images/Img5.jpg" alt="">
+              <h3>Neque Porro Quisquam</h3>
+              <p>apps, icon, ui</p>
+            </a>
           </div>
-          <div class="col-md-4">
-            <img src="images/Img6.jpg" alt="">
-            <h3>Neque Porro Quisquam</h3>
-            <p>apps, icon, ui</p>
+          <div class="col-sm-6 col-md-4" data-cat="icons">
+              <a href="#">
+              <img src="images/Img6.jpg" alt="">
+              <h3>Neque Porro Quisquam</h3>
+              <p>apps, icon, ui</p>
+            </a>
           </div>
         </div>
         <a href="#" class="button">Watch more</a>
