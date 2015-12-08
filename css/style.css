@@ -1720,7 +1720,7 @@ section .container {
   background-color: #fff;
   position: relative;
   top: -3em;
-  padding-bottom: 4em;
+  padding-bottom: 1em;
 }
 .portfolio .filter-buttons {
   margin: 4.5em 0;
