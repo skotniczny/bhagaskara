@@ -426,13 +426,11 @@ section .container {
     }
   }
   .slider-mask {
-    height: 400px;
-    padding: 2em 0;
     overflow: hidden;
-    position: relative;
+    padding-top: 5em;
     .slider-stripe {
-      position:absolute;
-      width: 5820px;
+      position: relative;
+      // width: 5820px;
       left: 0;
     }
   }
@@ -469,7 +467,7 @@ section .container {
     padding-bottom: 1em;
   }
   .filter-buttons {
-    margin: 4.5em 0;
+    margin-bottom: 4.5em;
     button {
       font-size: 1.12em;
       font-weight: 400;

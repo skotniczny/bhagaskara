@@ -1700,14 +1700,11 @@ section .container {
   color: #777;
 }
 .blog .slider-mask {
-  height: 400px;
-  padding: 2em 0;
   overflow: hidden;
-  position: relative;
+  padding-top: 5em;
 }
 .blog .slider-mask .slider-stripe {
-  position: absolute;
-  width: 5820px;
+  position: relative;
   left: 0;
 }
 .blog .slider-item {
@@ -1740,7 +1737,7 @@ section .container {
   padding-bottom: 1em;
 }
 .portfolio .filter-buttons {
-  margin: 4.5em 0;
+  margin-bottom: 4.5em;
 }
 .portfolio .filter-buttons button {
   font-size: 1.12em;

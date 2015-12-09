@@ -39,14 +39,33 @@ document.addEventListener("DOMContentLoaded", function() {
   appsBtn.addEventListener("click", filterPortfolio, false);
   iconsBtn.addEventListener("click", filterPortfolio, false);
 
+  // Slajder sekcji blog
+
+  function slideTo(index) {
+    var slidePosition = index * parseInt(itemWidth);
+    var left = -slidePosition;
+    $(".slider-stripe").animate({"left": left});
+  }
+
+  var itemWidth = $(".slider-mask").css("width");
+  var stripeWidth = $(".slider-item").length * parseInt(innerWidth);
+  $(".slider-stripe").css({"width": stripeWidth}); 
+
+  $(window).resize(function() {
+    itemWidth = $(".slider-mask").css("width");
+    $(".slider-item").css({"width": itemWidth});
+
+    stripeWidth = $(".slider-item").length * parseInt(innerWidth);
+    $(".slider-stripe").css({"width": stripeWidth});
+
+    var activeItem = $(".slider-indicators").find(".active");
+    var itemIndex = $(".slider-indicators li").index(activeItem);
+    slideTo(itemIndex);
+  });
 
   $(".slider-indicators").on("click", "li", function(event) {
     $(this).addClass("active").siblings().removeClass("active");
     var itemIndex = $(this).index();
-    var slidePosition = itemIndex * 970;
-    var left = -slidePosition;
-    // console.log("slidePosition", slidePosition);
-    // console.log(".stripe left:", left);
-    $(".slider-stripe").animate({"left": left});
+    slideTo(itemIndex);
   });
 }, false);
