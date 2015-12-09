@@ -1699,11 +1699,27 @@ section .container {
   font-size: 1.2em;
   color: #777;
 }
-.blog .indicators {
+.blog .slider-mask {
+  height: 400px;
+  padding: 2em 0;
+  overflow: hidden;
+  position: relative;
+}
+.blog .slider-mask .slider-stripe {
+  position: absolute;
+  width: 5820px;
+  left: 0;
+}
+.blog .slider-item {
+  width: 970px;
+  float: left;
+}
+.blog .slider-indicators {
   display: inline-block;
   padding: 0;
 }
-.blog .indicators li {
+.blog .slider-indicators li {
+  cursor: pointer;
   margin: 0 2px;
   display: inline-block;
   height: 12px;
@@ -1711,7 +1727,8 @@ section .container {
   border: 1px solid #777;
   border-radius: 50%;
 }
-.blog .indicators li.active {
+.blog .slider-indicators li.active {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
   background-color: #777;
 }
 
@@ -1801,6 +1818,7 @@ section .container {
 .contact input[type=text],
 .contact input[type=email],
 .contact textarea {
+  color: #222;
   padding: 1em;
   margin-bottom: 1em;
   font-size: 1.5em;

@@ -425,10 +425,26 @@ section .container {
       color: $boulder;
     }
   }
-  .indicators {
+  .slider-mask {
+    height: 400px;
+    padding: 2em 0;
+    overflow: hidden;
+    position: relative;
+    .slider-stripe {
+      position:absolute;
+      width: 5820px;
+      left: 0;
+    }
+  }
+  .slider-item {
+    width: 970px;
+    float: left;
+  }
+  .slider-indicators {
     display: inline-block;
     padding: 0;
     li {
+      cursor: pointer;
       margin: 0 2px;
       display: inline-block;
       height: 12px;
@@ -436,6 +452,7 @@ section .container {
       border: 1px solid $boulder;
       border-radius: 50%;
       &.active {
+        box-shadow: 0 0 3px rgba(0,0,0,.6);
         background-color: $boulder;
       }
     }
@@ -531,6 +548,7 @@ section .container {
   input[type=text], 
   input[type=email],
   textarea {
+    color: $mine-shaft;
     padding: 1em;
     margin-bottom: 1em;
     font-size: 1.5em;
