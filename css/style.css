@@ -1875,6 +1875,14 @@ section .container {
   font-style: normal;
   font-weight: 700;
 }
+.contact .social-icons {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .contact .social-icons {
+    text-align: left;
+  }
+}
 
 /* Stopka strony */
 .page-footer {

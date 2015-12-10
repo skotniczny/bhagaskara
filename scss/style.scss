@@ -601,6 +601,13 @@ section .container {
     font-style: normal;
     font-weight: 700;
   }
+
+  .social-icons {
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
 }
 
 /* Stopka strony */
