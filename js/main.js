@@ -65,27 +65,31 @@ document.addEventListener("DOMContentLoaded", function() {
   // Slajder sekcji blog
 
   function slideTo(index) {
-    var slidePosition = index * parseInt(itemWidth);
+    var slidePosition = index * parseInt(blogItemWidth);
     var left = -slidePosition;
-    $(".slider-stripe").animate({"left": left});
+    $(".blog .slider-stripe").animate({"left": left});
   }
 
-  var itemWidth = $(".blog .slider-mask").css("width");
-  console.log(itemWidth);
-  var sliderItems = $(".blog .slider-item");
-  console.log(sliderItems);
-  sliderItems.css({"width": itemWidth});
-  console.log(sliderItems.length);
-  var stripeWidth = sliderItems.length * parseInt(itemWidth);
+  var blogItemWidth = $(".blog .slider-mask").css("width");
+  console.log(blogItemWidth);
+
+  var blogSliderItems = $(".blog .slider-item");
+  console.log(blogSliderItems);
+
+  blogSliderItems.css({"width": blogItemWidth});
+  console.log(blogSliderItems.length);
+
+  var stripeWidth = blogSliderItems.length * parseInt(blogItemWidth);
   console.log(stripeWidth);
+  
   $(".blog .slider-stripe").css({"width": stripeWidth}); 
 
   $(window).resize(function() {
-    itemWidth = $(".slider-mask").css("width");
-    sliderItems.css({"width": itemWidth});
+    blogItemWidth = $(".blog .slider-mask").css("width");
+    blogSliderItems.css({"width": blogItemWidth});
 
-    stripeWidth = sliderItems.length * parseInt(itemWidth);
-    $(".slider-stripe").css({"width": stripeWidth});
+    stripeWidth = blogSliderItems.length * parseInt(blogItemWidth);
+    $(".blog .slider-stripe").css({"width": stripeWidth});
 
     var activeItem = $(".slider-indicators").find(".active");
     var itemIndex = $(".slider-indicators li").index(activeItem);
