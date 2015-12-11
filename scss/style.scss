@@ -19,6 +19,7 @@ $mine-shaft: #222;
 
 body {
   color: $dove-gray;
+  background-color: $white;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   text-align: center;
@@ -252,7 +253,8 @@ a {
 /* Sekcje */
 
 section .container {
-  padding: 8em 0;
+  padding-top: 8em;
+  padding-bottom: 8em;
 }
 
 .section-title {
@@ -375,6 +377,18 @@ section .container {
     }    
   }
 
+  .slider-mask {
+    overflow: hidden;
+    padding-top: 0;
+    .slider-stripe {
+      position: relative;
+      left: 0;
+    }
+    .slider-item img {
+      max-width: 100%;
+    }
+  }
+
   h3 {
     font-size: 1.5em;
     color: $tundora;
@@ -392,7 +406,8 @@ section .container {
 
 .services {
   .container {
-    padding: 7em 0 11em;
+    padding-top: 7em;
+    padding-bottom: 11em;
     .section-title {
       margin-bottom: 4em; 
     }
@@ -458,7 +473,6 @@ section .container {
     padding-top: 5em;
     .slider-stripe {
       position: relative;
-      // width: 5820px;
       left: 0;
     }
   }
@@ -481,6 +495,12 @@ section .container {
         box-shadow: 0 0 3px rgba(0,0,0,.6);
         background-color: $boulder;
       }
+    }
+    a {
+      font-size: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
     }
   }
 }
