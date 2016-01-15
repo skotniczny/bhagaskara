@@ -2,7 +2,7 @@
 
 Responsive website based on [Bhagaskara a onepage Multipurpose Flat Bootstrap Responsive web template](https://w3layouts.com/bhagaskara-onepage-multipurpose-flat-bootstrap-responsive-web-template/)
 
-Created at the 3rd workshop at [Codder’s Lab](http://coderslab.pl/kurs-front-end)
+Created at the 3rd workshop at [Coder’s Lab](http://coderslab.pl/kurs-front-end)
 
 ##Features 
 
