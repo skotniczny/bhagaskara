@@ -70,7 +70,8 @@ $(function() {
     $progressBar = $(this);
     var $progressBarTitle = $progressBar.prev().find("span");
     var $bar = $progressBar.find("span");
-    var percent = $bar.attr("style").slice(7);
+    var percent = $bar[0].style.width;
+    console.log(percent);
 
     $progressBarTitle.text("0%");
     $bar.attr("style", "width: 0%");
@@ -81,7 +82,30 @@ $(function() {
       }, {
         duration: 1500,
         step: function(now) {
-          $progressBarTitle.text(Math.floor(now) + "%");
+          $progressBarTitle.text(Math.round(now) + "%");
+        }
+      });
+    });
+  });
+
+  $(".counter").each(function() {
+    $this = $(this);
+    var $number = $this.find("span");
+    var value = $number.text();
+    $number.text("0");
+    $this.one("inview", function() {
+      $({
+        count: 0
+      }).animate({
+        count: value
+      }, {
+        duration: 2000,
+        step: function(now) {
+          if (value.slice(-1) == "%") {
+            $number.text(Math.round(now) + "%");
+          } else {
+            $number.text(Math.round(now));
+          }
         }
       });
     });
