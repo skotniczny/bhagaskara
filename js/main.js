@@ -63,6 +63,30 @@ $(function() {
   //   console.log(idx);
   // }, 3000);
 
+  // Progres bars
+  var $progressBars = $(".progress-bar");
+
+  $progressBars.each(function() {
+    $progressBar = $(this);
+    var $progressBarTitle = $progressBar.prev().find("span");
+    var $bar = $progressBar.find("span");
+    var percent = $bar.attr("style").slice(7);
+
+    $progressBarTitle.text("0%");
+    $bar.attr("style", "width: 0%");
+    
+    $progressBar.on("inview", function() {
+      $bar.animate({
+        width: percent
+      }, {
+        duration: 1500,
+        step: function(now) {
+          $progressBarTitle.text(Math.floor(now) + "%");
+        }
+      });
+    });
+  });
+
   // Portfolio filtering
   function filterPortfolio(event) {
     $("button.active").removeClass("active");
