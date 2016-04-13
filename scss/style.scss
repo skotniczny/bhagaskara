@@ -711,6 +711,10 @@ section .container {
   width: 1px;
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
 // [class*='col-'] {
 //  outline: 1px solid $white;
 //  min-height: 100px;
