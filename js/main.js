@@ -64,19 +64,16 @@ $(function() {
   // }, 3000);
 
   // Progres bars
-  var $progressBars = $(".progress-bar");
-
-  $progressBars.each(function() {
-    $progressBar = $(this);
-    var $progressBarTitle = $progressBar.prev().find("span");
-    var $bar = $progressBar.find("span");
+  $(".progress-bar").each(function() {
+    $this = $(this);
+    var $progressBarTitle = $this.prev().find("span");
+    var $bar = $this.find("span");
     var percent = $bar[0].style.width;
-    console.log(percent);
 
     $progressBarTitle.text("0%");
     $bar.attr("style", "width: 0%");
     
-    $progressBar.on("inview", function() {
+    $this.on("inview", function() {
       $bar.animate({
         width: percent
       }, {
@@ -88,6 +85,7 @@ $(function() {
     });
   });
 
+  // Counters
   $(".counter").each(function() {
     $this = $(this);
     var $number = $this.find("span");
@@ -99,7 +97,7 @@ $(function() {
       }).animate({
         count: value
       }, {
-        duration: 2000,
+        duration: 1500,
         step: function(now) {
           if (value.slice(-1) == "%") {
             $number.text(Math.round(now) + "%");
@@ -137,11 +135,6 @@ $(function() {
     return false;
   });
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-  function _(selector) {
-    return (selector.charAt(0) == "#") ? document.querySelector(selector) : document.querySelectorAll(selector);
-  }
 
   // Slajder sekcji zespół
 
@@ -181,53 +174,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     console.log(slideNo, slideLen);
   });
-
-  // Slajder sekcji blog
-
-  // function slideTo(index) {
-  //   var slidePosition = index * parseInt(blogItemWidth);
-  //   var left = -slidePosition;
-  //   $(".blog .slider-stripe").animate({"left": left});
-  // }
-
-  // var blogItemWidth = $(".blog .slider-mask").css("width");
-  // console.log(blogItemWidth);
-
-  // var blogSliderItems = $(".blog .slider-item");
-  // console.log(blogSliderItems);
-
-  // blogSliderItems.css({"width": blogItemWidth});
-  // console.log(blogSliderItems.length);
-
-  // var stripeWidth = blogSliderItems.length * parseInt(blogItemWidth);
-  // console.log(stripeWidth);
-  
-  // $(".blog .slider-stripe").css({"width": stripeWidth}); 
-
-  // $(window).resize(function() {
-  //   blogItemWidth = $(".blog .slider-mask").css("width");
-  //   blogSliderItems.css({"width": blogItemWidth});
-
-  //   stripeWidth = blogSliderItems.length * parseInt(blogItemWidth);
-  //   $(".blog .slider-stripe").css({"width": stripeWidth});
-
-  //   var activeItem = $(".slider-indicators").find(".active");
-  //   var itemIndex = $(".slider-indicators li").index(activeItem);
-  //   slideTo(itemIndex);
-  // });
-
-  // $(".slider-indicators").on("click", "li", function(event) {
-  //   event.preventDefault();
-  //   $(this).addClass("active").siblings().removeClass("active");
-  //   var itemIndex = $(this).index();
-  //   slideTo(itemIndex);
-  // });
-  
-  // var idx = 1;
-  // var intervalId = setInterval(function() {
-  //   $(".slider-indicators").find("li").eq(idx).click();
-  //   idx = (idx < 5) ? idx += 1 : 0;
-  //   console.log(idx);
-  // }, 3000);
-
-}, false);

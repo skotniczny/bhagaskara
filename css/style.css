@@ -1301,9 +1301,14 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 @media (min-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (min-width: 992px) {
   body {
     font-size: 16px;
   }
@@ -1425,7 +1430,7 @@ a:focus {
 }
 .page-header .arrow-down a:hover, .page-header .arrow-down a:focus {
   outline: 0;
-  background-image: url("../images/arrow1.png");
+  background-image: url("../images/arrow-hover.png");
 }
 
 .page-header div[class*='col-'] {
@@ -1612,17 +1617,26 @@ section .container {
 .info .icon-heading.heart:before {
   background-position: 0 0;
 }
+.info .icon-heading.heart:hover:before {
+  background-position: -200px 0;
+}
 .info .icon-heading.diamond:before {
   background-position: 0 -200px;
+}
+.info .icon-heading.diamond:hover:before {
+  background-position: -200px -200px;
 }
 .info .icon-heading.coffee:before {
   background-position: 0 -400px;
 }
+.info .icon-heading.coffee:hover:before {
+  background-position: -200px -401px;
+}
 .info .icon-heading.phone:before {
   background-position: 0 -600px;
 }
-.info .icon-heading:hover:before {
-  background-image: url("../images/icons-sprite-hover.png");
+.info .icon-heading.phone:hover:before {
+  background-position: -200px -601px;
 }
 .info p {
   line-height: 1.7;
@@ -1985,6 +1999,15 @@ section .container {
 
 .img-circle {
   border-radius: 50%;
+}
+
+.visible-sm-block {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-block {
+    display: block !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

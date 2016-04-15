@@ -23,8 +23,11 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  @media (min-width: 992px) {
     font-size: 16px;
   }
 }
@@ -145,7 +148,7 @@ a {
       background-repeat: no-repeat;
       &:hover, &:focus {
         outline: 0;
-        background-image: url("../images/arrow1.png");  
+        background-image: url("../images/arrow-hover.png");  
       }
     }
   }  
@@ -321,19 +324,38 @@ section .container {
       background-image: url("../images/icons-sprite.png");
       background-repeat: no-repeat;
     }
-    &.heart:before { 
-      background-position: 0 0; 
+    &.heart {
+      &:before { 
+        background-position: 0 0;
+      }
+      &:hover:before { 
+        background-position: -200px 0;
+      }
     }
-    &.diamond:before {
-      background-position: 0 -200px; 
+    &.diamond {
+      &:before {
+        background-position: 0 -200px; 
+      }
+      &:hover:before {
+        background-position: -200px -200px; 
+      }
     }
-    &.coffee:before {
-      background-position: 0 -400px; 
+    &.coffee {
+      &:before {
+        background-position: 0 -400px; 
+      }
+      &:hover:before {
+        background-position: -200px -401px; 
+      }
+    }  
+    &.phone { 
+      &:before {
+        background-position: 0 -600px; 
+      }
+      &:hover:before {
+        background-position: -200px -601px; 
+      }
     }
-    &.phone:before {
-      background-position: 0 -600px; 
-    }
-    &:hover:before { background-image: url("../images/icons-sprite-hover.png") }
   }
   p {
     line-height: 1.7;
@@ -713,6 +735,13 @@ section .container {
 
 .img-circle {
   border-radius: 50%;
+}
+
+.visible-sm-block {
+  display: none;
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: block !important;
+  }
 }
 
 // [class*='col-'] {
